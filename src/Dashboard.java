@@ -7,6 +7,7 @@
  *
  * @author Mani Prakash
  */
+
 public class Dashboard extends javax.swing.JFrame {
 
     /**
@@ -33,105 +34,146 @@ public class Dashboard extends javax.swing.JFrame {
         b5 = new javax.swing.JButton();
         b6 = new javax.swing.JButton();
         b7 = new javax.swing.JButton();
+        b8 = new javax.swing.JButton();
+        b9 = new javax.swing.JButton();
+        b10 = new javax.swing.JButton();
+        b11 = new javax.swing.JButton();
+        b12 = new javax.swing.JButton();
+        b13 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(325, 125));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1366, 768));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("    DASHBOARD");
+        jLabel1.setText("    D A S H B O A R D");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, 180, 40));
 
+        b1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/issue.png"))); // NOI18N
         b1.setText("BOOKS AVAILABLE");
         b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b1ActionPerformed(evt);
             }
         });
+        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 261, 184, 59));
 
+        b2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/New book.png"))); // NOI18N
         b2.setText("ADD BOOK");
         b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b2ActionPerformed(evt);
             }
         });
+        getContentPane().add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 129, 184, -1));
 
+        b3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/open-book (2).png"))); // NOI18N
         b3.setText("REMOVE BOOK");
         b3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b3ActionPerformed(evt);
             }
         });
+        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 393, 192, 59));
 
+        b4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/business-card (1).png"))); // NOI18N
         b4.setText("STAFF DETAILS");
         b4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b4ActionPerformed(evt);
             }
         });
+        getContentPane().add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(921, 261, 184, 59));
 
+        b5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add (1).png"))); // NOI18N
         b5.setText("ADD STAFF");
         b5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b5ActionPerformed(evt);
             }
         });
+        getContentPane().add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 129, 184, -1));
 
+        b6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete-user (1).png"))); // NOI18N
         b6.setText("REMOVE STAFF");
         b6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b6ActionPerformed(evt);
             }
         });
+        getContentPane().add(b6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 393, 184, 59));
 
+        b7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/admin-panel (1).png"))); // NOI18N
         b7.setText("EDIT ADMIN");
         b7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b7ActionPerformed(evt);
             }
         });
+        getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(921, 401, 184, 59));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 179, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(b2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b3, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(175, 175, 175)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(b4, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b6, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(176, 176, 176))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(b7, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(352, 352, 352))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(132, 132, 132)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(b2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(b3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addComponent(b7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83))
-        );
+        b8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/member-add-on-300x300.png"))); // NOI18N
+        b8.setText("ADD STUDENT");
+        b8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 129, 184, -1));
+
+        b9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/Statics.png"))); // NOI18N
+        b9.setText("STATISTICS");
+        b9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b9, new org.netbeans.lib.awtextra.AbsoluteConstraints(921, 128, 184, 59));
+
+        b10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/isue.jpg"))); // NOI18N
+        b10.setText("ISSUE BOOK");
+        b10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b10, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 261, 184, 59));
+
+        b11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/return-book-1-560407.png"))); // NOI18N
+        b11.setText("RETURN BOOK");
+        b11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 261, 180, 59));
+
+        b12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user (1).png"))); // NOI18N
+        b12.setText("REMOVE STUDENT");
+        b12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b12, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 393, 184, 59));
+
+        b13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logout (1).png"))); // NOI18N
+        b13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 660, 71, 59));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/Library_Book_532388_1366x768.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 780));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -178,6 +220,35 @@ public class Dashboard extends javax.swing.JFrame {
         edit.setVisible(true);
     }//GEN-LAST:event_b7ActionPerformed
 
+    private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
+        // TODO add your handling code here:
+        Add_Students addstudent = new Add_Students();
+        addstudent.setVisible(true);
+        
+    }//GEN-LAST:event_b8ActionPerformed
+
+    private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b9ActionPerformed
+
+    private void b10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b10ActionPerformed
+
+    private void b11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b11ActionPerformed
+
+    private void b12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b12ActionPerformed
+
+    private void b13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b13ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new LoginPage().setVisible(true);
+    }//GEN-LAST:event_b13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -215,12 +286,19 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b1;
+    private javax.swing.JButton b10;
+    private javax.swing.JButton b11;
+    private javax.swing.JButton b12;
+    private javax.swing.JButton b13;
     private javax.swing.JButton b2;
     private javax.swing.JButton b3;
     private javax.swing.JButton b4;
     private javax.swing.JButton b5;
     private javax.swing.JButton b6;
     private javax.swing.JButton b7;
+    private javax.swing.JButton b8;
+    private javax.swing.JButton b9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
