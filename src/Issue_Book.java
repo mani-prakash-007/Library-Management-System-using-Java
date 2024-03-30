@@ -1,3 +1,8 @@
+
+import java.sql.*;
+import javax.swing.*;
+import java.text.SimpleDateFormat;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -32,8 +37,8 @@ public class Issue_Book extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         T1 = new javax.swing.JTextField();
         T2 = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        c1 = new com.toedter.calendar.JDateChooser();
+        c2 = new com.toedter.calendar.JDateChooser();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -77,12 +82,17 @@ public class Issue_Book extends javax.swing.JFrame {
             }
         });
         getContentPane().add(T2, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 204, 261, 27));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 249, 261, 27));
-        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 304, 261, 27));
+        getContentPane().add(c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 249, 261, 27));
+        getContentPane().add(c2, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 304, 261, 27));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/issue book.png"))); // NOI18N
         jButton2.setText("ISSUE ");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 390, 106, 35));
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -118,6 +128,45 @@ public class Issue_Book extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String url = "jdbc:mysql://localhost/library";
+        String user = "root";
+        String pwd = "Mani@2003";
+        String book_id = T1.getText();
+        String s_id = T2.getText();
+        SimpleDateFormat dformat = new SimpleDateFormat("dd-mm-yyyy");
+        String issueDate = dformat.format(c1.getDate());
+        String dueDate = dformat.format(c2.getDate());
+        String returnBook = "No";
+        
+        
+        try{
+            Connection conn = DriverManager.getConnection(url,user,pwd);
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery("select * from books where BOOK_ID = '"+book_id+"';");
+            if(rs.next())
+            {
+                ResultSet rs1 = stm.executeQuery("select * from students where S_ID = '"+s_id+"';");
+                if(rs1.next())
+                {
+                    stm.executeUpdate("insert into issue_books values ('"+book_id+"','"+s_id+"','"+issueDate+"','"+dueDate+"','"+returnBook+"');");
+                    JOptionPane.showMessageDialog(null,"Book Successfully Issued...");
+                    setVisible(false);
+                    new Issue_Book().setVisible(true);
+                }
+                else
+                    JOptionPane.showMessageDialog(null, "Incorrect Student ID...");
+            }
+            else
+                JOptionPane.showMessageDialog(null, "Incorrect Book ID...");
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, e);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,11 +206,11 @@ public class Issue_Book extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField T1;
     private javax.swing.JTextField T2;
+    private com.toedter.calendar.JDateChooser c1;
+    private com.toedter.calendar.JDateChooser c2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

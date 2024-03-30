@@ -233,6 +233,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void b10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b10ActionPerformed
         // TODO add your handling code here:
+        new Issue_Book().setVisible(true);
     }//GEN-LAST:event_b10ActionPerformed
 
     private void b11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b11ActionPerformed
