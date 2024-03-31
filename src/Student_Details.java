@@ -10,14 +10,13 @@
 import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.*;
 
-public class Staff_Details extends javax.swing.JFrame {
+public class Student_Details extends javax.swing.JFrame {
 
     /**
      * Creates new form Staff_Details
      */
-    public Staff_Details() {
+    public Student_Details() {
         initComponents();
     }
 
@@ -49,7 +48,7 @@ public class Staff_Details extends javax.swing.JFrame {
 
             },
             new String [] {
-                "STAFF ID", "NAME", "CONTACT"
+                "Student ID", "Name", "Father Name", "Course", "Branch", "Year"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -76,7 +75,7 @@ public class Staff_Details extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("STAFF DETAILS");
+        jLabel1.setText("STUDENT DETAILS");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 22, 858, 27));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/123456.png"))); // NOI18N
@@ -91,20 +90,23 @@ public class Staff_Details extends javax.swing.JFrame {
         String url = "jdbc:mysql://localhost/library";
         String user = "root";
         String pwd = "Mani@2003";
-        String query = "select * from staffs;";
+        String query = "select * from students;";
         
         try{
             Connection conn = DriverManager.getConnection(url,user,pwd);
-            Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery(query);
-            while(rs.next()){
-                String sid = rs.getString("STAFF_ID");
-                String contact = rs.getString("CONTACT");
-                String sname = rs.getString("STAFF_NAME");
-                model.addRow(new Object[] {sid,sname,contact});
+            Statement st = conn.createStatement();
+            ResultSet rst = st.executeQuery(query);
+            while(rst.next()){
+                String sid = rst.getString("S_ID");
+                String sname = rst.getString("s_NAME");
+                String fname = rst.getString("FATHER_NAME");
+                String course = rst.getString("COURSE_NAME");
+                String branch = rst.getString("BRANCH_NAME");
+                String year = rst.getString("YEAR");
+                model.addRow(new Object[] {sid,sname,fname,course,branch,year});
             }
-            rs.close();
-            stm.close();
+            rst.close();
+            st.close();
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this,e.getMessage());

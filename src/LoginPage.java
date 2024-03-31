@@ -126,7 +126,7 @@ public class LoginPage extends javax.swing.JFrame {
                 
                 if(realpswrd.equals(pswrd.trim()))
                 {
-                    Dashboard dsh = new Dashboard();
+                    Dashboard1 dsh = new Dashboard1();
                     dsh.setVisible(true);
                     this.dispose();
                 }

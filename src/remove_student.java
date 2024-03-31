@@ -7,18 +7,17 @@
  *
  * @author Mani Prakash
  */
-import java.sql.*;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.*;
+import java.sql.*;
 
-public class Staff_Details extends javax.swing.JFrame {
+public class remove_student extends javax.swing.JFrame {
 
     /**
-     * Creates new form Staff_Details
+     * Creates new form Remove_Staff
      */
-    public Staff_Details() {
+    public remove_student() {
         initComponents();
+        setDefaultCloseOperation(Remove_Staff.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -30,84 +29,92 @@ public class Staff_Details extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        t1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(525, 200));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 204));
-        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("REMOVE STUDENT");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 190, 37));
 
-            },
-            new String [] {
-                "STAFF ID", "NAME", "CONTACT"
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Enter the Student ID to Remove");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 148, 310, 29));
+
+        t1.setBackground(new java.awt.Color(255, 255, 204));
+        t1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        t1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t1ActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 78, 858, 366));
+        });
+        getContentPane().add(t1, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 212, 310, 32));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("FETCH");
+        jButton1.setText("REMOVE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 516, 124, 38));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 298, 96, 33));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("EXIT");
+        jButton2.setText("CANCEL");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(599, 516, 124, 38));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 298, 96, 33));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("STAFF DETAILS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 22, 858, 27));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/123456.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/123456.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 920, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t1ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         String url = "jdbc:mysql://localhost/library";
         String user = "root";
         String pwd = "Mani@2003";
-        String query = "select * from staffs;";
+        String input = t1.getText();
+        String query = "delete from students where S_ID = '"+input+"';";
         
         try{
             Connection conn = DriverManager.getConnection(url,user,pwd);
-            Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery(query);
-            while(rs.next()){
-                String sid = rs.getString("STAFF_ID");
-                String contact = rs.getString("CONTACT");
-                String sname = rs.getString("STAFF_NAME");
-                model.addRow(new Object[] {sid,sname,contact});
+            Statement stmt = conn.createStatement();
+            int row = stmt.executeUpdate(query);
+            if(row>0)
+            {
+                JOptionPane.showMessageDialog(this, "Student Removed from Library");
             }
-            rs.close();
-            stm.close();
+            else
+            {
+                JOptionPane.showMessageDialog(this, "No Student found for provided ID");
+            }
+            
+            stmt.close();
+            t1.setText(null);
         }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(this,e.getMessage());
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -133,20 +140,20 @@ public class Staff_Details extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Staff_Details.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Remove_Staff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Staff_Details.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Remove_Staff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Staff_Details.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Remove_Staff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Staff_Details.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Remove_Staff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Staff_Details().setVisible(true);
+                new remove_student().setVisible(true);
             }
         });
     }
@@ -156,7 +163,7 @@ public class Staff_Details extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField t1;
     // End of variables declaration//GEN-END:variables
 }

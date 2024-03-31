@@ -8,12 +8,12 @@
  * @author Mani Prakash
  */
 
-public class Dashboard extends javax.swing.JFrame {
+public class Dashboard1 extends javax.swing.JFrame {
 
     /**
      * Creates new form Dashboard
      */
-    public Dashboard() {
+    public Dashboard1() {
         initComponents();
     }
 
@@ -40,12 +40,12 @@ public class Dashboard extends javax.swing.JFrame {
         b11 = new javax.swing.JButton();
         b12 = new javax.swing.JButton();
         b13 = new javax.swing.JButton();
+        b14 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(325, 125));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -62,7 +62,7 @@ public class Dashboard extends javax.swing.JFrame {
                 b1ActionPerformed(evt);
             }
         });
-        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 261, 184, 59));
+        getContentPane().add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 261, -1, 59));
 
         b2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/New book.png"))); // NOI18N
         b2.setText("ADD BOOK");
@@ -80,7 +80,7 @@ public class Dashboard extends javax.swing.JFrame {
                 b3ActionPerformed(evt);
             }
         });
-        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 393, 192, 59));
+        getContentPane().add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 393, 192, 59));
 
         b4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/business-card (1).png"))); // NOI18N
         b4.setText("STAFF DETAILS");
@@ -107,7 +107,7 @@ public class Dashboard extends javax.swing.JFrame {
                 b6ActionPerformed(evt);
             }
         });
-        getContentPane().add(b6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 393, 184, 59));
+        getContentPane().add(b6, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 393, 184, 59));
 
         b7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/admin-panel (1).png"))); // NOI18N
         b7.setText("EDIT ADMIN");
@@ -116,7 +116,7 @@ public class Dashboard extends javax.swing.JFrame {
                 b7ActionPerformed(evt);
             }
         });
-        getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(921, 401, 184, 59));
+        getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(557, 536, 184, 59));
 
         b8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/member-add-on-300x300.png"))); // NOI18N
         b8.setText("ADD STUDENT");
@@ -143,7 +143,7 @@ public class Dashboard extends javax.swing.JFrame {
                 b10ActionPerformed(evt);
             }
         });
-        getContentPane().add(b10, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 261, 184, 59));
+        getContentPane().add(b10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 261, 184, 59));
 
         b11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/return-book-1-560407.png"))); // NOI18N
         b11.setText("RETURN BOOK");
@@ -152,7 +152,7 @@ public class Dashboard extends javax.swing.JFrame {
                 b11ActionPerformed(evt);
             }
         });
-        getContentPane().add(b11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 261, 180, 59));
+        getContentPane().add(b11, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 261, 180, 59));
 
         b12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user (1).png"))); // NOI18N
         b12.setText("REMOVE STUDENT");
@@ -161,7 +161,7 @@ public class Dashboard extends javax.swing.JFrame {
                 b12ActionPerformed(evt);
             }
         });
-        getContentPane().add(b12, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 393, 184, 59));
+        getContentPane().add(b12, new org.netbeans.lib.awtextra.AbsoluteConstraints(921, 393, 184, 59));
 
         b13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logout (1).png"))); // NOI18N
         b13.addActionListener(new java.awt.event.ActionListener() {
@@ -171,9 +171,17 @@ public class Dashboard extends javax.swing.JFrame {
         });
         getContentPane().add(b13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 660, 71, 59));
 
+        b14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/business-card (1).png"))); // NOI18N
+        b14.setText("STUDENT DETAILS");
+        b14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b14ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(b14, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 393, 184, 59));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon 1/Library_Book_532388_1366x768.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 780));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -229,6 +237,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
         // TODO add your handling code here:
+        new statistics().setVisible(true);
     }//GEN-LAST:event_b9ActionPerformed
 
     private void b10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b10ActionPerformed
@@ -238,10 +247,12 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void b11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b11ActionPerformed
         // TODO add your handling code here:
+        new return_book().setVisible(true);
     }//GEN-LAST:event_b11ActionPerformed
 
     private void b12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b12ActionPerformed
         // TODO add your handling code here:
+        new remove_student().setVisible(true);
     }//GEN-LAST:event_b12ActionPerformed
 
     private void b13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b13ActionPerformed
@@ -249,6 +260,11 @@ public class Dashboard extends javax.swing.JFrame {
         setVisible(false);
         new LoginPage().setVisible(true);
     }//GEN-LAST:event_b13ActionPerformed
+
+    private void b14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b14ActionPerformed
+        // TODO add your handling code here:
+        new Student_Details().setVisible(true);
+    }//GEN-LAST:event_b14ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,7 +296,7 @@ public class Dashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dashboard().setVisible(true);
+                new Dashboard1().setVisible(true);
             }
         });
     }
@@ -291,6 +307,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton b11;
     private javax.swing.JButton b12;
     private javax.swing.JButton b13;
+    private javax.swing.JButton b14;
     private javax.swing.JButton b2;
     private javax.swing.JButton b3;
     private javax.swing.JButton b4;

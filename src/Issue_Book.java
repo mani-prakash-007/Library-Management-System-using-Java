@@ -47,25 +47,25 @@ public class Issue_Book extends javax.swing.JFrame {
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(525, 275));
+        setLocation(new java.awt.Point(525, 200));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("BOOK ID");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 157, 128, 27));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 157, 160, 27));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("STUDENT ID");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 203, 128, 27));
+        jLabel2.setText("STUDENT ID / STAFF ID");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 203, 160, 27));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("DUE DATE");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 304, 128, 27));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 304, 160, 27));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("ISSUE DATE");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 249, 128, 27));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 249, 160, 27));
 
         T1.setBackground(new java.awt.Color(255, 255, 204));
         T1.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +149,7 @@ public class Issue_Book extends javax.swing.JFrame {
             if(rs.next())
             {
                 ResultSet rs1 = stm.executeQuery("select * from students where S_ID = '"+s_id+"';");
+                
                 if(rs1.next())
                 {
                     stm.executeUpdate("insert into issue_books values ('"+book_id+"','"+s_id+"','"+issueDate+"','"+dueDate+"','"+returnBook+"');");
@@ -157,7 +158,19 @@ public class Issue_Book extends javax.swing.JFrame {
                     new Issue_Book().setVisible(true);
                 }
                 else
-                    JOptionPane.showMessageDialog(null, "Incorrect Student ID...");
+                {
+                    ResultSet rs2 = stm.executeQuery("select * from staffs where STAFF_ID = '"+s_id+"';");
+                    if(rs2.next())
+                    {
+                        stm.executeUpdate("insert into issue_books values ('"+book_id+"','"+s_id+"','"+issueDate+"','"+dueDate+"','"+returnBook+"');");
+                        JOptionPane.showMessageDialog(null,"Book Successfully Issued...");
+                        setVisible(false);
+                        new Issue_Book().setVisible(true);
+                    }else
+                    {
+                        JOptionPane.showMessageDialog(null, "Incorrect Student ID or Staff ID...");
+                    }
+                }
             }
             else
                 JOptionPane.showMessageDialog(null, "Incorrect Book ID...");
